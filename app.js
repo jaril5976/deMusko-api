@@ -10,6 +10,10 @@ var bodyParser = require('body-parser')
 //MULTER FOR FORM-DATA AND FILES
 var multer = require('multer');
 
+//LOGGER
+const logger = require('morgan');
+app.use(logger('common'));
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
