@@ -38,7 +38,3 @@ module.exports.loop_sample = function (req, res) {
     return res.send(Text);
 }
 
-module.exports.gender=function(req,res){
-    var data=req.body;
-    console.log(data);
-}
