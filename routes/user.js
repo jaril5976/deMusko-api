@@ -7,5 +7,9 @@ var controllers = require('../controllers/user');
 router.get('/first', controllers.first);
 router.get('/second', controllers.second);
 
+//My API
+
+router.get('/yash',controllers.yash);
+
 //EXPORT ROUTER
 module.exports = router;
