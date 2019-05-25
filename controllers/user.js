@@ -5,5 +5,5 @@ module.exports.first = function(req, res) {
 
 //USER SECOND API
 module.exports.second = function(req, res) {
-    return res.send('user second api called')
+    return res.send(req.body)
 };
