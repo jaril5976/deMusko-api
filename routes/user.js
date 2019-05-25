@@ -10,6 +10,7 @@ router.get('/second', controllers.second);
 //POST ROUTES
 
 router.post('/fetch_data',controllers.fetch_data);
+router.post('/loop_sample',controllers.loop_sample);
 
 //EXPORT ROUTER
 module.exports = router;
