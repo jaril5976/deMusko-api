@@ -11,6 +11,7 @@ router.get('/second', controllers.second);
 
 router.post('/fetch_data',controllers.fetch_data);
 router.post('/loop_sample',controllers.loop_sample);
+router.post('/add_todo',controllers.add_todo);
 
 //EXPORT ROUTER
 module.exports = router;

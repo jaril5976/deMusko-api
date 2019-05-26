@@ -1,3 +1,5 @@
+const db = require('../server/models/index.js');
+
 //USER FIRST API
 module.exports.first = function (req, res) {
     return res.send('user first api called')
@@ -36,5 +38,13 @@ module.exports.loop_sample = function (req, res) {
     }
 
     return res.send(Text);
+}
+//ADD_TODO API
+module.exports.add_todo = async function (req, res) {
+    var todoItem = req.body.title;
+    const __resp = await db.todo.create({
+        title: todoItem
+    });
+    return res.send(__resp);
 }
 
