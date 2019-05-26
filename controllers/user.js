@@ -1,16 +1,22 @@
 const db = require('../server/models/index.js');
 
-//USER FIRST API
+/**
+ * @api {get} /user/first This is first api
+ * @apiGroup User
+ * @apiDescription First API
+ */
 module.exports.first = function (req, res) {
     return res.send('user first api called')
 };
 
-//USER SECOND API
+/**
+ * @api {get} /user/second This is second api
+ * @apiGroup User
+ * @apiDescription Second API
+ */
 module.exports.second = function (req, res) {
     return res.send('user second api called')
 };
-
-//FETCH DATA
 
 module.exports.fetch_data = function (req, res) {
     var data = req.body;
@@ -39,7 +45,14 @@ module.exports.loop_sample = function (req, res) {
 
     return res.send(Text);
 }
-//ADD_TODO API
+
+/**
+ * @api {post} /user/add_todo Sample add data
+ * @apiGroup User
+ * @apiDescription Sample add data
+ * @apiParamExample Postman:
+ * title: 'Raj'
+ */
 module.exports.add_todo = async function (req, res) {
     var todoItem = req.body.title;
     const __resp = await db.todo.create({
