@@ -23,9 +23,9 @@ module.exports.second = function (req, res) {
 };
 
 /**
- * @api {get} /user/fetch_data This is second api
+ * @api {get} /user/fetch_data This is fetch api
  * @apiGroup User
- * @apiDescription Fetch APi
+ * @apiDescription Fetch API
  * @apiParamExample Postman:
  * first_name: 'Raj'
  * last_name: 'Jariwala'
