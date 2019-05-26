@@ -1,4 +1,5 @@
 //IMPORT
+require('app-module-path').addPath(__dirname);
 const express = require('express')
 const app = express()
 const port = 8080
