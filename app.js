@@ -1,8 +1,18 @@
 //IMPORT
+require('app-module-path').addPath(__dirname);
 const express = require('express')
 const app = express()
 const port = 8080
 const routes = require('./routes/index');
+
+//API DOC
+app.use('/api-docs', express.static('api-docs'));
+
+//LIB DOC
+app.use('/lib-docs', express.static('lib-docs'));
+
+//MDEDIA GETTER
+app.use('/media', express.static('public/storage'));
 
 //BODY-PARSER FOR REQUEST DATA
 var bodyParser = require('body-parser')

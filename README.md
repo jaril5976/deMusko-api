@@ -18,7 +18,12 @@ npm install
 
 4 Run DeMusko. 
 ```
-node app.js
+npm start
+```
+
+5 Run API-DOCS. 
+```
+npm run api-docs
 ```
 
 ### your api server is localhost:8080
