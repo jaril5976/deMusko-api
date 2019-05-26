@@ -9,6 +9,7 @@ router.get('/second', controllers.second);
 
 //POST ROUTES
 router.post('/copy', controllers.copy);
+router.post('/dataGet',controllers.dataGet);
 
 //EXPORT ROUTER
 module.exports = router;

@@ -16,3 +16,13 @@ module.exports.copy = function(req, res) {
     console.log('Incoming file data  :->', req.files)
     return res.send('Please check your node app console!')
 };
+//FETCH_DATA API FUNCTION
+module.exports.dataGet = function (req, res) {
+    
+    var data = req.body;
+
+    return res.send({
+        'data': `Hey my name is ${data.first_name} ${data.last_name} and my email is ${data.email}, you should add my phone number : ${data.phone_number}.`
+    });
+}
+
