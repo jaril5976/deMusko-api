@@ -2,6 +2,7 @@
 require('app-module-path').addPath(__dirname);
 const express = require('express')
 const app = express()
+var http = require("http");
 const port = 8080
 const routes = require('./routes/index');
 
@@ -30,12 +31,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-// MULTER INTEGRATION
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
+// MULTER INTEGRATION
 app.use(multer({dest:'./uploads/'}).any());
 
 //CONNECT ALL API ROUTE
 app.use('/api', routes);
 
-//SERVER PORT
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+module.exports = app;
