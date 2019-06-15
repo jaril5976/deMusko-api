@@ -109,12 +109,12 @@ module.exports.register = async function (req, res) {
  * email: 'rajjariwala5976@gmail.com'
  * password: 'dev@123'
  */
-module.exports.register = async function (req, res) {
+module.exports.login = async function (req, res) {
     //GET DATA
-    var data = req.body;
+    // var data = req.body;
     //CALL ACTION
-    const __resp = await LoginUser(data)
+    // const __resp = await LoginUser(data)
     //RETURN RESPONSE
-    return res.send(__resp);
+    // return res.send(__resp);
 }
 
