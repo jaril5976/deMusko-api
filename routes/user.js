@@ -12,6 +12,7 @@ router.post('/fetch_data',controllers.fetch_data);
 router.post('/loop_sample',controllers.loop_sample);
 router.post('/add_todo',controllers.add_todo);
 router.post('/register',controllers.register);
+router.post('/login',controllers.login);
 
 //EXPORT ROUTER
 module.exports = router;

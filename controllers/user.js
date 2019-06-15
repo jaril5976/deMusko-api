@@ -101,3 +101,20 @@ module.exports.register = async function (req, res) {
     return res.send(__resp);
 }
 
+/**
+ * @api {post} /user/login User Login
+ * @apiGroup User
+ * @apiDescription User Login
+ * @apiParamExample Postman:
+ * email: 'rajjariwala5976@gmail.com'
+ * password: 'dev@123'
+ */
+module.exports.register = async function (req, res) {
+    //GET DATA
+    var data = req.body;
+    //CALL ACTION
+    const __resp = await LoginUser(data)
+    //RETURN RESPONSE
+    return res.send(__resp);
+}
+
