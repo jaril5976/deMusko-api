@@ -1,6 +1,7 @@
 //LIB IMPORT
 const db = require('server/models/index.js');
 const RegisterUser = require('data-objects/user/register/action');
+const UserLogin = require('data-objects/user/login/action');
 
 /**
  * @api {get} /user/first This is first api
@@ -111,10 +112,10 @@ module.exports.register = async function (req, res) {
  */
 module.exports.login = async function (req, res) {
     //GET DATA
-    // var data = req.body;
+    var data = req.body;
     //CALL ACTION
-    // const __resp = await LoginUser(data)
+    const __resp = await UserLogin(data)
     //RETURN RESPONSE
-    // return res.send(__resp);
+    return res.send(__resp);
 }
 

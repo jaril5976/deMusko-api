@@ -9,7 +9,7 @@ const app = require('../app');
 const http = require('http');
 
 // Get port from environment and store in Express.
-const ENV_SERVER_PORT = normalizePort(process.env.SERVER_PORT || '3030');
+const ENV_SERVER_PORT = normalizePort(process.env.SERVER_PORT || '8080');
 const ENV_SERVER_ADDRESS = process.env.SERVER_ADDRESS;
 
 app.set('port', ENV_SERVER_PORT);
