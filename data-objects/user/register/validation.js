@@ -8,6 +8,7 @@ const schema = Joi.object().options({ abortEarly: false }).keys({
     phone: Joi.string().regex(new Regex().Phone()).label('Phone number').required(),
     email:Joi.string().regex(new Regex().Email()).label('Email').required(),
     password: Joi.string().regex(new Regex().Password()).label('Password'),
+    profile_image: Joi.object().label('Profile Image')
 });
 //EXPORT SCHEMA
 module.exports = schema;

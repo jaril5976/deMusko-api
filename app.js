@@ -1,5 +1,6 @@
 //IMPORT
 require('app-module-path').addPath(__dirname);
+require('dotenv').config()
 const express = require('express')
 const app = express()
 var http = require("http");
@@ -17,7 +18,7 @@ app.use('/api-docs', express.static('api-docs'));
 app.use('/lib-docs', express.static('lib-docs'));
 
 //MDEDIA GETTER
-app.use('/media', express.static('public/storage'));
+app.use('/media', express.static('storage/files'));
 
 //BODY-PARSER FOR REQUEST DATA
 var bodyParser = require('body-parser')
@@ -42,7 +43,18 @@ app.use(function(req, res, next) {
 });
 
 // MULTER INTEGRATION
-app.use(multer({dest:'./uploads/'}).any());
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './uploads/')
+    },
+    filename: function (req, file, cb) {
+        const ext = file.mimetype.split("/").pop();
+        const hash = Math.random().toString(36).substr(2, 8);
+        const name = [file.fieldname, hash, Date.now()].join('-') + '.' + ext;
+        cb(null, name);
+    }
+  });
+app.use(multer({ storage: storage }).any());
 
 //CONNECT ALL API ROUTE
 app.use('/api', routes);

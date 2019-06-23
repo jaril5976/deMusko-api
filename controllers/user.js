@@ -2,6 +2,7 @@
 const db = require('server/models/index.js');
 const RegisterUser = require('data-objects/user/register/action');
 const UserLogin = require('data-objects/user/login/action');
+const find = require('lodash/find');
 
 /**
  * @api {get} /user/first This is first api
@@ -96,6 +97,11 @@ module.exports.add_todo = async function (req, res) {
 module.exports.register = async function (req, res) {
     //GET DATA
     var data = req.body;
+
+    if(req.files.length > 0){
+        data.profile_image = find(req.files, {fieldname: "profile_image"})
+    }
+    
     //CALL ACTION
     const __resp = await RegisterUser(data)
     //RETURN RESPONSE
