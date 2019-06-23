@@ -1,11 +1,14 @@
 //IMPORT
 require('app-module-path').addPath(__dirname);
-require('dotenv').config()
 const express = require('express')
+
+//DOTENV CONFIG
+require('dotenv').config()
+
+//CREATE EXPRESS OBJECT
 const app = express()
-var http = require("http");
-const port = 8080
 const routes = require('./routes/index');
+//ERROR HANDLING WITH PRETTY-ERROR
 const {DEBUG} = require('config/config')
 if (DEBUG){
   require('pretty-error').start();
@@ -36,6 +39,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+//ALLOW ACCESS CONTROL ORIGIN
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept");

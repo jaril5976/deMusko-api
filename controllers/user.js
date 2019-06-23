@@ -93,15 +93,15 @@ module.exports.add_todo = async function (req, res) {
  * last_name: 'Jariwala'
  * email: 'rajjariwala5976@gmail.com'
  * password: 'dev@123'
+ * profile_image: 'file'
  */
 module.exports.register = async function (req, res) {
     //GET DATA
     var data = req.body;
-
+    //FILE DATA
     if(req.files.length > 0){
         data.profile_image = find(req.files, {fieldname: "profile_image"})
     }
-    
     //CALL ACTION
     const __resp = await RegisterUser(data)
     //RETURN RESPONSE
