@@ -7,9 +7,5 @@ var controllers = require('../controllers/guest');
 router.get('/first', controllers.first);
 router.get('/second', controllers.second);
 
-//POST ROUTES
-router.post('/copy', controllers.copy);
-router.post('/dataGet',controllers.dataGet);
-
 //EXPORT ROUTER
 module.exports = router;
