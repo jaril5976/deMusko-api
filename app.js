@@ -5,6 +5,10 @@ const app = express()
 var http = require("http");
 const port = 8080
 const routes = require('./routes/index');
+const {DEBUG} = require('config/config')
+if (DEBUG){
+  require('pretty-error').start();
+}
 
 //API DOC
 app.use('/api-docs', express.static('api-docs'));
