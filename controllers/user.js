@@ -2,7 +2,9 @@
 const db = require('server/models/index.js');
 const RegisterUser = require('data-objects/user/register/action');
 const UserLogin = require('data-objects/user/login/action');
+const User_get_single = require('data-objects/user/get_single/action');
 const find = require('lodash/find');
+const User = require('lib/user')
 
 /**
  * @api {post} /user/register User Registration
@@ -45,3 +47,18 @@ module.exports.login = async function (req, res) {
     return res.send(__resp);
 }
 
+module.exports.read = async function (req, res) {
+    var users = new User();
+    var user_data = await users.read();
+
+    //RETURN RESPONSE
+     return res.send(user_data);
+    }
+
+     module.exports.indi = async function (req, res) {
+        var userid = req.body.uid
+        var user = new User();
+        var usrdata = await User_get_single(req.body);
+   
+     return res.send(usrdata);
+     }
