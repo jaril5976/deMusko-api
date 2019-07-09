@@ -1,6 +1,7 @@
 //LIB IMPORT
 const db = require('server/models/index.js');
 const RegisterUser = require('data-objects/user/register/action');
+const Manan = require('data-objects/user/manan/action');
 const UserLogin = require('data-objects/user/login/action');
 const find = require('lodash/find');
 
@@ -55,6 +56,7 @@ module.exports.login = async function (req, res) {
  * any: all works
  */
 module.exports.manan = async function (req, res) {
-    console.log(req.body)
-    return res.send(req.body);
+    var data = req.body;
+    const response = await Manan(data)
+    return res.send(response);
 }
