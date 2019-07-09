@@ -45,3 +45,16 @@ module.exports.login = async function (req, res) {
     return res.send(__resp);
 }
 
+/**
+ * @api {post} /user/manan Test api for manan
+ * @apiGroup User
+ * @apiDescription Test api for manan
+ * @apiParamExample Postman:
+ * email: 'rajjariwala5976@gmail.com'
+ * password: 'dev@123'
+ * any: all works
+ */
+module.exports.manan = async function (req, res) {
+    console.log(req.body)
+    return res.send(req.body);
+}
