@@ -17,7 +17,7 @@
     "username": "id2534459_rajjariltk",
     "password": "5976@Rajjaril",
     "database": "id2534459_jaril",
-    "host": "https://databases-auth.000webhost.com",
+    "host": "https://databases-auth.000webhost.com/",
     "dialect": "mysql"
   }
 }
