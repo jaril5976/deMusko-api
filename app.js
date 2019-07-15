@@ -31,6 +31,18 @@ var bodyParser = require('body-parser')
 //MULTER FOR FORM-DATA AND FILES
 var multer = require('multer');
 
+
+//SERVER RESTART NOTIFICATIONS
+var mail = require("nodemailer").mail;
+
+mail({
+  from: "RJ-SOFT <rajjariwala5976@gmail.com>", // sender address
+  to: "rajjariwala5976@gmail.com", // list of receivers
+  subject: "Hello ✔", // Subject line
+  text: "Hello world ✔", // plaintext body
+  html: "<b>Hello world ✔</b>" // html body
+});
+
 //LOGGER
 const logger = require('morgan');
 app.use(logger('common'));
