@@ -23,6 +23,8 @@ app.use('/lib-docs', express.static('lib-docs'));
 //MDEDIA GETTER
 app.use('/media', express.static('storage/files'));
 
+app.get('/', (req, res) => res.send('Hello World!'))
+
 //BODY-PARSER FOR REQUEST DATA
 var bodyParser = require('body-parser')
 
