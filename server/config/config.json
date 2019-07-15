@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "id2534459_rajjariltk",
-    "password": "5976@Rajjaril",
-    "database": "id2534459_jaril",
-    "host": "127.0.0.1",
+    "username": "tIe0guiijQ",
+    "password": "0u2dTCpoSR",
+    "database": "tIe0guiijQ",
+    "host": "remotemysql.com",
     "dialect": "mysql"
   }
 }
