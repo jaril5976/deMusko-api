@@ -31,36 +31,6 @@ var bodyParser = require('body-parser')
 //MULTER FOR FORM-DATA AND FILES
 var multer = require('multer');
 
-
-//SERVER RESTART NOTIFICATIONS
-if(process.JARIL == 'PRODUCTION'){
-  console.log('EMAIL NOTIFICATION CALLED VIA PRODUCTION')
-  var nodemailer = require('nodemailer');
-
-  var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'bhumika.angle5976@gmail.com',
-      pass: '5976@Rajjaril'
-    }
-  });
-
-  var mailOptions = {
-    from: 'bhumika.angle5976@gmail.com',
-    to: 'rajjariwala5976@gmail.com',
-    subject: 'server status',
-    text: 'Production server is just restarted!'
-  };
-
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
-};
-
 //LOGGER
 const logger = require('morgan');
 app.use(logger('common'));
