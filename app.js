@@ -33,15 +33,33 @@ var multer = require('multer');
 
 
 //SERVER RESTART NOTIFICATIONS
-var mail = require("nodemailer").mail;
+if(process.env.ENV == 'productions'){
+  console.log('EMAIL NOTIFICATION CALLED VIA PRODUCTION')
+  var nodemailer = require('nodemailer');
 
-mail({
-  from: "RJ-SOFT <rajjariwala5976@gmail.com>", // sender address
-  to: "rajjariwala5976@gmail.com", // list of receivers
-  subject: "Hello ✔", // Subject line
-  text: "Hello world ✔", // plaintext body
-  html: "<b>Hello world ✔</b>" // html body
-});
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'bhumika.angle5976@gmail.com',
+      pass: '5976@Rajjaril'
+    }
+  });
+
+  var mailOptions = {
+    from: 'bhumika.angle5976@gmail.com',
+    to: 'rajjariwala5976@gmail.com',
+    subject: 'server status',
+    text: 'Production server is just restarted!'
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+};
 
 //LOGGER
 const logger = require('morgan');
