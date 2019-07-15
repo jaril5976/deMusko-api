@@ -33,7 +33,7 @@ var multer = require('multer');
 
 
 //SERVER RESTART NOTIFICATIONS
-if(process.env == 'production'){
+if(process.JARIL == 'PRODUCTION'){
   console.log('EMAIL NOTIFICATION CALLED VIA PRODUCTION')
   var nodemailer = require('nodemailer');
 
