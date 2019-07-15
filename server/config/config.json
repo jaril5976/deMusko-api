@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "id2534459_rajjariltk",
-    "password": "5976@Rajjaril",
-    "database": "id2534459_jaril",
-    "host": "https://databases-auth.000webhost.com/",
-    "dialect": "mysql"
-  }
+  "username": "anonymous",
+  "password": "",
+  "database": "id2534459_jaril",
+  "host": "ensembldb.ensembl.org",
+  "dialect": "mysql"
+}
 }
