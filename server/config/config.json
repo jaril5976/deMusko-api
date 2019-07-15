@@ -1,16 +1,16 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "demusko",
-    "host": "127.0.0.1",
+    "username": "tIe0guiijQ",
+    "password": "0u2dTCpoSR",
+    "database": "tIe0guiijQ",
+    "host": "remotemysql.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "demusko",
-    "host": "127.0.0.1",
+    "username": "tIe0guiijQ",
+    "password": "0u2dTCpoSR",
+    "database": "tIe0guiijQ",
+    "host": "remotemysql.com",
     "dialect": "mysql"
   },
   "production": {
