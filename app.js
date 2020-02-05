@@ -17,7 +17,7 @@ app.use('/media', express.static('public/storage'));
 //BODY-PARSER FOR REQUEST DATA
 var bodyParser = require('body-parser')
 
-//MULTER FOR FORM-DATA AND FILES
+//MULTER FOR FORM-DATA AND FILES 
 var multer = require('multer');
 
 //LOGGER
