@@ -4,26 +4,33 @@
   "description": "1 Clone repo.",
   "main": "app.js",
   "dependencies": {
+    "apidoc": "^0.17.7",
     "app-module-path": "^2.2.0",
     "bcrypt": "^3.0.6",
-    "apidoc": "^0.17.7",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "joi": "^14.3.1",
+    "lodash": "^4.17.11",
     "morgan": "^1.9.1",
+    "move-file": "^1.2.0",
     "multer": "^1.4.1",
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
+    "nodemailer": "^6.3.0",
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^5.8.6",
+    "pretty-error": "^2.1.1",
+    "sequelize": "^5.10.1",
+    "sequelize-cli": "^5.5.0",
+    "sha1": "^1.1.1",
     "swagger-ui-express": "^4.0.4"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "api-docs": "apidoc -i ./controllers -o api-docs/",
-    "start": "node app.js"
+    "start": "npm run api-docs && node bin/www.js"
   },
   "repository": {
     "type": "git",
