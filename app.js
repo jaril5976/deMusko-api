@@ -14,7 +14,7 @@ if (DEBUG){
   require('pretty-error').start();
 }
 
-//API DOC
+//API DOC 
 app.use('/api-docs', express.static('api-docs'));
 
 //LIB DOC
@@ -28,7 +28,7 @@ app.get('/', (req, res) => res.send('Hello World!'))
 //BODY-PARSER FOR REQUEST DATA
 var bodyParser = require('body-parser')
 
-//MULTER FOR FORM-DATA AND FILES
+//MULTER FOR FORM-DATA AND FILES 
 var multer = require('multer');
 
 //LOGGER
