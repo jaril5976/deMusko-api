@@ -30,7 +30,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "api-docs": "apidoc -i ./controllers -o api-docs/",
-    "start": "npm run api-docs && node bin/www.js"
+    "start": "npm run api-docs && nodemon bin/www.js"
   },
   "repository": {
     "type": "git",

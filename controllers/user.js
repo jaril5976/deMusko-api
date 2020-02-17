@@ -2,6 +2,7 @@
 const db = require('server/models/index.js');
 const RegisterUser = require('data-objects/user/register/action');
 const UserLogin = require('data-objects/user/login/action');
+const GetUsers = require('data-objects/user/getUsers/action');
 const find = require('lodash/find');
 
 /**
@@ -19,8 +20,8 @@ module.exports.register = async function (req, res) {
     //GET DATA
     var data = req.body;
     //FILE DATA
-    if(req.files.length > 0){
-        data.profile_image = find(req.files, {fieldname: "profile_image"})
+    if (req.files.length > 0) {
+        data.profile_image = find(req.files, { fieldname: "profile_image" })
     }
     //CALL ACTION
     const __resp = await RegisterUser(data)
@@ -45,3 +46,19 @@ module.exports.login = async function (req, res) {
     return res.send(__resp);
 }
 
+/**
+ * @api {post} /user/getUsers Get All Users
+ * @apiGroup User
+ * @apiDescription Get All Users 
+ * @apiParamExample Postman:
+ * email: 'rajjariwala5976@gmail.com'
+ * password: 'dev@123'
+ */
+module.exports.getUsers = async function (req, res) {
+    // //GET DATA
+    // var data = req.body;
+    //CALL ACTION
+    const __resp = await GetUsers()
+    //RETURN RESPONSE
+    return res.send(__resp);
+}
